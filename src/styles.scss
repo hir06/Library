@@ -1,0 +1,203 @@
+$fa-font-path: "../node_modules/font-awesome/fonts";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+.home {
+    height: 100%;
+    width: 100%; 
+}
+.spinner-grow {
+    width: 3rem;
+    height: 3rem;
+}
+body {
+    overflow: hidden;
+    background: #f9f9f9;
+    margin: 0;
+}
+.full-width {
+    width: 100%;
+}
+.full-height {
+    height: 100%;
+}
+// Table styling
+$breakpoint: 750px;
+$heading-color: #43BAC0;
+$height-except-table-body: 205px;
+$heading-height: 50px;
+.is-striped { background-color: rgba(233,200,147,0.2) }
+
+.Rtable {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 3em 0;
+  padding: 0;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  height: 100%;
+  overflow: hidden;
+  .Rtable-row {
+    width: 100%;
+    display: flex;
+    .Rtable-cell {
+      box-sizing: border-box;
+      flex-grow: 1;
+      width: auto;
+      padding: 0.8em 1.2em;
+      overflow: hidden; // Or flex might break
+      list-style: none;
+
+      &.column-heading {
+        background-color: $heading-color;
+        color: white;
+        padding: 1em;
+      }
+
+      .Rtable-cell--heading {
+        display: none;
+      }
+
+      .Rtable-cell--content {
+        a {
+          font-size: 2em;
+          color: #333;
+        }
+        
+        .webinar-date {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .Rtable-body {
+      height: calc(100vh - #{$height-except-table-body});
+      overflow: auto;
+      width: 100%;
+  }
+  .Rtable-row--head {
+      height: $heading-height;
+  }
+}
+
+/* Responsive
+==================================== */
+@media all and (max-width: $breakpoint) {
+  .is-striped {
+    background-color: white;
+  }
+  
+  .Rtable--collapse  {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    box-shadow: none;
+    
+    .Rtable-row {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 2em;
+      box-shadow: 0 0 40px rgba(0,0,0,0.2);
+      
+      .Rtable-cell {
+        width: 100% !important;
+        display: flex;
+        align-items: center;
+
+        .Rtable-cell--heading {
+          display: inline-block;
+          flex: 1;
+          max-width: 120px;
+          min-width: 120px;
+          color: $heading-color;
+          font-weight: 700;
+          border-right: 1px solid #ccc;
+          margin-right: 1em;
+        }
+
+        .Rtable-cell--content {
+          flex: 2;
+          padding-left: 1em;
+        }
+      }
+    }
+    
+    .topic-cell {
+      background-color: $heading-color;
+      color: white;
+      font-weight: 700;
+      order: -1;
+      
+      .Rtable-cell--content {
+        padding-left: 0 !important;
+      }
+    }
+    
+    .Rtable-row--head {
+      display: none;
+    }
+  }
+}
+
+// Non-Flex modernizer fallback
+.no-flexbox .Rtable {
+  display: block;
+  
+  &.Rtable-cell {
+    width: 100%;
+  }
+}
+// containers
+.cont {
+    width: 1000px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: auto;
+    max-height: calc(100vh - 90px);
+    border: 4px solid #418dda;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    .title {
+        text-align: center;
+        font-size: 2rem;
+    }
+}
+.form-control {
+    display: block;
+    width: 97%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.btn {
+    display: flex;
+    margin: auto;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+}
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.loading {
+font-size: 40px;
+margin: auto;
+text-align: center;
+}

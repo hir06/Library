@@ -1,0 +1,27 @@
+@import "../../variables.scss";
+
+.lib_bg-light {
+    background-color: #418dda!important;
+    color: white;
+    box-shadow: -1px -1px 3px 3px black;
+    text-shadow: -3px -2px 13px black;
+}
+.lib_navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: .5rem 1rem;
+    .header {
+        //color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: $full-width;
+        }
+}
+
+
+
+
+

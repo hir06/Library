@@ -1,0 +1,22 @@
+<div class="Rtable-row full-width" [ngClass]="{'is-striped': row.id%2==0}">
+        <ng-container *ngIf="!isEditable || updateBookID != row.id; else editTemplate">
+          <div class="Rtable-cell" *ngFor="let col of cols" [ngStyle]="{'min-width':col | getWidth}">
+            {{row[col]}}
+          </div>
+        </ng-container>
+        <ng-template #editTemplate>
+          <div class="Rtable-cell" *ngFor="let col of cols" [ngStyle]="{'min-width':col | getWidth}">
+            <input type="text" class="form-control" [(ngModel)]="model[col]" name="col" *ngIf="col != 'id'">
+          </div>
+        </ng-template>
+
+        <div class="Rtable-cell" [ngStyle]="{'min-width':'edit' | getWidth}">  
+          <button  class="btn btn-success" *ngIf="!isEditable"
+          (click)="updateBook(row,model)">
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  
+        </button>
+        <button class="btn btn-success" (click)="updateBook(row,model)" *ngIf="updateBookID == row.id && isEditable">
+            <i class="fa fa-floppy-o" aria-hidden="true"></i>
+        </button>
+        </div>
+      </div>

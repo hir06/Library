@@ -1,0 +1,7 @@
+<app-header></app-header>
+      <div class="tab">
+          <button class="tablinks" [routerLink]="['/books']" [ngClass]="{'active':tabIndex==0}" (click)="tabIndex=0">Books</button>
+          <button class="tablinks" [routerLink]="['/add-book']" [ngClass]="{'active':tabIndex==1}" (click)="tabIndex=1">Add Book</button>
+          <button class="tablinks" [routerLink]="['/my-books']" [ngClass]="{'active':tabIndex==2}" (click)="tabIndex=2">My Books</button>
+        </div>
+<router-outlet class="full-height"></router-outlet>

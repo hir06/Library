@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+
+
+
+.wrapper {
+  width: 100%;
+  margin: 1em auto;
+  margin-top: 0;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.filter {
+    display: block;
+    width: 250px;
+    margin: auto;
+    margin-top: 10px;
+}

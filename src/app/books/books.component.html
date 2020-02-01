@@ -1,0 +1,25 @@
+<div [ngrxView]="dataState" class="full-height">
+  <div *ngrxViewResolving>
+        <span class="loading">Loading...</span>
+    </div>
+  <div *ngrxViewResolved class="parent">
+    <div class="home">
+        <input type="text" [(ngModel)]="filterText" name="" (input)="filters(filterText)" class="filter" placeholder="Search for book here..">
+      <div class="wrapper">
+        <div class="Rtable Rtable--5cols Rtable--collapse">
+          <div class="Rtable-row Rtable-row--head">
+            <div class="Rtable-cell column-heading" *ngFor="let i of cols" [ngStyle]="{'min-width': i | getWidth}">{{i}}
+            </div>
+            <div class="Rtable-cell column-heading" [ngStyle]="{'min-width':'edit' | getWidth}">edit</div>
+          </div>
+          <div class="Rtable-body">
+            <div class="full-width" *ngFor="let row of filterData">
+              <app-book [row]="row" [cols]="cols" [data]="data"></app-book>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>

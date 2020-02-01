@@ -1,0 +1,19 @@
+@import "../../variables.scss";
+$breakpoint: 750px;
+.wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+@media all and (max-width: $breakpoint) {
+    .cont {
+      width: 90% !important;
+    }
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
