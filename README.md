@@ -1,6 +1,6 @@
-# to run the project
-# npm i
-# npm start
+ 
+ # npm i
+ # npm start
 
 # grid for books which has sticky header plus responsive grid
 # inline edit for books
